@@ -1,0 +1,1 @@
+A package to ease the configuration of Web.

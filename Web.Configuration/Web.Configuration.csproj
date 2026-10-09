@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Web.Configuration</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dio Liew</Authors>
+    <Description>A package to ease the configuration of Web.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageDescription>A package to ease the configuration of Web.</PackageDescription>
+    <RepositoryUrl>https://github.com/DioLiew/Web.Configuration/tree/main</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+      <None Include="README.md" Pack="true" PackagePath="\"/>
+   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CSharpExt.Core" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+</Project>

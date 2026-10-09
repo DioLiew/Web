@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Web.OpenApi</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dio Liew</Authors>
+    <Description>A package to ease the configuration of OpenApi.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageDescription>A package to ease the configuration of OpenApi.</PackageDescription>
+    <RepositoryUrl>https://github.com/DioLiew/Web.Exception/tree/main</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Http" Version="10.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.12" />
+    <PackageReference Include="Microsoft.OpenApi" Version="2.12.2" />
+  </ItemGroup>
+</Project>

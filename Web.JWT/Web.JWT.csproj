@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Optional: Disable warnings for missing XML doc comments -->
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Web.JWT</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dio Liew</Authors>
+    <Description>A package to ease the configuration of JWT configuration.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageDescription>A package to ease the configuration of JWT configuration.</PackageDescription>
+    <RepositoryUrl>https://github.com/DioLiew/Web.Exception/tree/main</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>
