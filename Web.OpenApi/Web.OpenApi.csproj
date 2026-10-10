@@ -6,7 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Web.OpenApi</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Dio Liew</Authors>
     <Description>A package to ease the configuration of OpenApi.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
