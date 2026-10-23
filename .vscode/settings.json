@@ -4,4 +4,7 @@
 	"editor.formatOnSave": true,
 	"omnisharp.projectLoadTimeout": 120,
 	"omnisharp.waitForDebugger": true
+	"files.exclude": {
+		"**/Web.Swagger": true
+  }
 }
