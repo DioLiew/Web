@@ -6,7 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Web.Configuration</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Dio Liew</Authors>
     <Description>A package to ease the configuration of Web.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,7 +18,7 @@
       <None Include="README.md" Pack="true" PackagePath="\"/>
    </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CSharpExt.Core" Version="1.0.1" />
+    <PackageReference Include="CSharpExt.Core" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.13" />
   </ItemGroup>
   <ItemGroup>
