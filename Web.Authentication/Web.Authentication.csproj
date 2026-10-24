@@ -6,7 +6,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Web.Authentication</PackageId>
-    <Version>1.0.2</Version>
+    <VersionPrefix>1.0.3</VersionPrefix>
+    <VersionSuffix>dev-001</VersionSuffix>
     <Authors>Dio Liew</Authors>
     <Description>A package to ease the configuration of JWT Authentication.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,8 +19,7 @@
       <None Include="README.md" Pack="true" PackagePath="\" />
    </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CSharpExt.Core" Version="1.1.0" />
-    <PackageReference Include="Database.LiteDb" Version="1.0.3" />
+    <PackageReference Include="Database.LiteDb" Version="1.0.4-dev-001" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.13" />
     <PackageReference Include="QuartzPlugin" Version="1.0.1" />
   </ItemGroup>
