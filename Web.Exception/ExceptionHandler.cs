@@ -41,7 +41,9 @@ public class ExceptionHandler(ILogger<ExceptionHandler> logger): IExceptionHandl
             None: () => Status500InternalServerError
          )
       )
-      from _io in IO.lift(() => logger.LogError("{error}", Fail(code, exception.Message, httpContext.Request.Path, Activity.Current?.Id ?? httpContext.TraceIdentifier).ToString()))
+      let jsonError = System.Text.Json.JsonSerializer.Serialize(Fail(code, exception.Message, httpContext.Request.Path, Activity.Current?.Id ?? httpContext.TraceIdentifier))
+      //from _io in IO.lift(() => logger.LogError("{error}", Fail(code, exception.Message, httpContext.Request.Path, Activity.Current?.Id ?? httpContext.TraceIdentifier).ToString()))
+      from _io in IO.lift(() => logger.LogError("{error}", jsonError))
       >> IO.lift(() => httpContext.Response.StatusCode = code)
       select false
    ).RunAsync(cancellationToken);
