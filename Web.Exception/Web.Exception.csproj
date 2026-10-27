@@ -9,7 +9,7 @@
     <PackageId>Web.Exception</PackageId>
     <!-- <Version>1.0.2</Version> -->
     <VersionPrefix>1.0.3</VersionPrefix>
-    <VersionSuffix>dev-002</VersionSuffix>
+    <VersionSuffix>dev-003</VersionSuffix>
     <Authors>Dio Liew</Authors>
     <Description>A package to ease the configuration of Web Exception.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

@@ -3,13 +3,14 @@ using LanguageExt.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
+// using System.Diagnostics;
 using System.Net;
 using S = System;
+// using System.Text.Json;
 
 namespace Web.Exception;
 
-using static CSharpExt.Failure;
+// using static CSharpExt.Failure;
 using static CSharpExt.Prelude;
 using static LanguageExt.Prelude;
 using static Microsoft.AspNetCore.Http.StatusCodes;
@@ -32,6 +33,9 @@ public class ExceptionHandler(ILogger<ExceptionHandler> logger): IExceptionHandl
    //       )
    //       select false
    //    );
+   // static readonly JsonSerializerOptions jsonSerializerOptions = new() {
+   //    ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles
+   // };
 
    public ValueTask<bool> TryHandleAsync(HttpContext httpContext, S.Exception exception, CancellationToken cancellationToken) => (
       from code in IO.lift(
@@ -41,10 +45,18 @@ public class ExceptionHandler(ILogger<ExceptionHandler> logger): IExceptionHandl
             None: () => Status500InternalServerError
          )
       )
-      let jsonError = System.Text.Json.JsonSerializer.Serialize(Fail(code, exception.Message, httpContext.Request.Path, Activity.Current?.Id ?? httpContext.TraceIdentifier))
+      // let jsonError = JsonSerializer.Serialize(
+      //    Fail(code, exception.Message, httpContext.Request.Path, Activity.Current?.Id ?? httpContext.TraceIdentifier),
+      //    jsonSerializerOptions
+      // )
+      // let jsonError = JsonSerializer.Serialize(
+      //    (Error)exception,
+      //    options: jsonSerializerOptions
+      // )
       //from _io in IO.lift(() => logger.LogError("{error}", Fail(code, exception.Message, httpContext.Request.Path, Activity.Current?.Id ?? httpContext.TraceIdentifier).ToString()))
-      from _io in IO.lift(() => logger.LogError("{error}", jsonError))
-      >> IO.lift(() => httpContext.Response.StatusCode = code)
+      //from _io in IO.lift(() => logger.LogError("{error}", jsonError))
+      from _io in IO.lift(() => logger.LogError("{error}", (Error)exception))
+            >> IO.lift(() => httpContext.Response.StatusCode = code)
       select false
    ).RunAsync(cancellationToken);
 }
