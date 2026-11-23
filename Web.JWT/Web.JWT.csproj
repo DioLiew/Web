@@ -9,7 +9,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Web.JWT</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <VersionSuffix>dev-001</VersionSuffix>
     <Authors>Dio Liew</Authors>
     <Description>A package to ease the configuration of JWT configuration.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
