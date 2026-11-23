@@ -4,7 +4,8 @@ namespace Web.JWT.Settings;
 //    public Client()
 //       : this(Address: new BaseAddress(), RequestTimeout: default, RequestHeaders: [], ClockSkew: default, PooledConnectionLifetime: default, Recurrence: new Recurrence()) { }
 // }
-public sealed record class ClientX(IList<Address> Addresses, TimeSpan RequestTimeout, IList<RequestHeader> RequestHeaders, TimeSpan ClockSkew, TimeSpan PooledConnectionLifetime, Recurrence Recurrence) {
-   public ClientX()
+public sealed record class Client(IList<Address> Addresses, TimeSpan RequestTimeout, IList<RequestHeader> RequestHeaders, TimeSpan ClockSkew, TimeSpan PooledConnectionLifetime, Recurrence Recurrence)
+{
+   public Client()
       : this(Addresses: [], RequestTimeout: default, RequestHeaders: [], ClockSkew: default, PooledConnectionLifetime: default, Recurrence: new Recurrence()) { }
 }
